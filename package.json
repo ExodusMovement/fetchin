@@ -1,0 +1,28 @@
+{
+  "name": "fetchin",
+  "description": "Everyday I'm fetchin'.",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sonaye/fetchin.git"
+  },
+  "peerDependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-stage-0": "6.24.1",
+    "isomorphic-fetch": "^2.2.1",
+    "nodemon": "1.14.7"
+  },
+  "scripts": {
+    "start": "yarn build --watch & nodemon lib/tests.js",
+    "build":
+      "rm -r -f lib && mkdir -p lib && BABEL_ENV=production babel src --out-dir lib"
+  },
+  "babel": {
+    "presets": [["env", { "targets": { "node": "current" } }], "stage-0"]
+  }
+}
