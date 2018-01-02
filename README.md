@@ -7,6 +7,8 @@
 # Usage
 
 ```javascript
+import { get, post } from 'fetchin';
+
 // make a simple get request, promise-based, returns parsed json by default (can be modified)
 await get('https://foo');
 
