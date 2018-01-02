@@ -22,9 +22,6 @@ await get('/baz', { base }); // https://foo/baz
 await get('https://foo/{bar}', { args: { bar: 123 } }); // https://foo/123
 await get('https://foo/{bar}/{baz}', { args: { bar: 123, baz: 456 } }); // https://foo/123/456
 
-// you can pass callbacks too
-get('https://foo', { cb: json => console.log(json) });
-
 // response is not json?
 await get('https://foo', { json: false });
 
@@ -34,7 +31,7 @@ await get('https://foo', { opts: { headers: { bar: 'baz' } } });
 // make a simple post request, same api as get with a body prop
 await post('https://foo', { body: { bar: 123 } });
 
-// content-type by default is 'application/json', body is stringified, to overwrite utilize opts
+// Content-Type by default is 'application/json', body is stringified, to overwrite utilize opts
 await post('https://foo', {
   opts: { headers: { 'Content-Type': 'foo/bar' }, body: 'not json' }
 });
