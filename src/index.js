@@ -29,3 +29,7 @@ export const post = (target, opts = {}) =>
       ...opts.opts
     }
   });
+
+export const del = (target, opts = {}) => req('DELETE', target, opts);
+export const put = (target, opts = {}) => req('PUT', target, opts);
+export const head = (target, opts = {}) => req('HEAD', target, opts);

@@ -28,7 +28,7 @@ await get('https://foo', { json: false });
 // tweak/pass any other fetch() opts
 await get('https://foo', { opts: { headers: { bar: 'baz' } } });
 
-// make a simple post request, same api as get with a body prop
+// make a simple post request, same api as get with an additional body option
 await post('https://foo', { body: { bar: 123 } });
 
 // Content-Type by default is 'application/json', body is stringified, to overwrite utilize opts
