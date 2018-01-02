@@ -1,4 +1,4 @@
-import { get, post, qs } from './';
+import { get, post } from './';
 
 const run = async () => {
   try {

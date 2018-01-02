@@ -1,10 +1,7 @@
 import fetch from 'isomorphic-fetch';
 
 const ts = (string, args = {}) =>
-  string.replace(
-    /\{([a-zA-Z_$][0-9a-zA-Z_$]+)\}/g,
-    (match, arg) => args[arg] || ''
-  );
+  string.replace(/\{([a-zA-Z_$][0-9a-zA-Z_$]+)\}/g, (match, arg) => args[arg]);
 
 export const qs = params =>
   Object.keys(params)
