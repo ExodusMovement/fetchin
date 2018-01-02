@@ -32,9 +32,10 @@ export const get = (target, opts = {}) => req('GET', target, opts);
 
 export const post = (target, opts = {}) =>
   req('POST', target, {
+    ...opts,
     opts: {
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(opts.body)
-    },
-    ...opts
+      body: JSON.stringify(opts.body),
+      ...opts.opts
+    }
   });
