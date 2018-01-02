@@ -16,15 +16,12 @@ const u = (base, target, args, params) => {
   return url;
 };
 
-const req = (method, target, { base, args, params, cb, text, opts }) => {
+const req = (method, target, { base, args, params, cb, json = true, opts }) => {
   const url = u(base, target, args, params);
   const config = { ...opts, method };
-
-  // test
-  // console.log(url, JSON.stringify(config));
-
+  // console.log(url, JSON.stringify(config)); // test
   return fetch(url, config)
-    .then(res => (text ? res.text() : res.json()))
+    .then(res => (json ? res.json() : res.text()))
     .then(res => (cb ? cb(res) : res));
 };
 

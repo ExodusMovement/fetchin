@@ -21,7 +21,7 @@ const run = async () => {
     get('https://foo', { cb: json => console.log(json) });
 
     // response is not json?
-    await get('https://foo', { text: true });
+    await get('https://foo', { json: false });
 
     // tweak/pass any other fetch() opts
     await get('https://foo', { opts: { headers: { bar: 'baz' } } });
