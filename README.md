@@ -4,6 +4,8 @@
 
 `yarn add isomorphic-fetch fetchin`
 
+`yarn add fetchin` is enough for React Native.
+
 # Usage
 
 ```javascript

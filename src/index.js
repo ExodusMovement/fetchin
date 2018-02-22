@@ -1,4 +1,11 @@
-import fetch from 'isomorphic-fetch';
+const env = () => {
+  if (typeof document !== 'undefined') return 'web';
+  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative')
+    return 'rn';
+  return 'node';
+};
+
+const f = env() === 'rn' ? fetch : require('isomorphic-fetch');
 
 const ts = (target, args) =>
   target.replace(/\{([a-zA-Z_$][0-9a-zA-Z_$]+)\}/g, (match, arg) => args[arg]);
@@ -15,7 +22,7 @@ const req = (method, target, { base, args, params, opts, json = true }) => {
   url += params ? qs(params) : '';
   const config = { ...opts, method };
   // console.log(url, JSON.stringify(config)); // test
-  return fetch(url, config).then(res => (json ? res.json() : res.text()));
+  return f(url, config).then(res => (json ? res.json() : res.text()));
 };
 
 export const get = (target, opts = {}) => req('GET', target, opts);
