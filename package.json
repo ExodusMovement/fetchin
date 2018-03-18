@@ -1,13 +1,14 @@
 {
   "name": "fetchin",
   "description": "Fetch helpers.",
-  "version": "0.0.7",
+  "version": "0.0.10",
   "main": "lib/index.js",
+  "react-native": "lib/rn.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sonaye/fetchin.git"
   },
-  "peerDependencies": {
+  "optionalDependencies": {
     "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
@@ -15,7 +16,7 @@
     "babel-preset-env": "1.6.1",
     "babel-preset-stage-0": "6.24.1",
     "isomorphic-fetch": "^2.2.1",
-    "nodemon": "1.15.1"
+    "nodemon": "1.17.2"
   },
   "scripts": {
     "start": "yarn build --watch & nodemon lib/tests.js",
