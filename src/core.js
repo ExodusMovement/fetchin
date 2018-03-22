@@ -10,26 +10,34 @@ const req = (
   method,
   target,
   { base, args, params, opts, json = true, ref = false, test = false }
-) => {
-  let url = base || '';
+) =>
+  new Promise(async (res, rej) => {
+    try {
+      let url = base || '';
 
-  url += ts(target, args);
-  url += params ? '?' : '';
-  url += params ? qs(params) : '';
+      url += ts(target, args);
+      url += params ? '?' : '';
+      url += params ? qs(params) : '';
 
-  const config = { ...opts, method };
+      const config = { ...opts, method };
 
-  // url, fetch config, fetchin config
-  if (test) return console.log(url, config, { json, ref });
+      if (test) {
+        // url, fetch config, fetchin config
+        console.log(url, config, { json, ref });
+        res();
+      }
 
-  return fetch(url, config).then(res => {
-    const data = json ? res.json() : res.text();
+      const resp = await fetch(url, config);
 
-    if (ref) return { data, res };
+      const data = await (json ? resp.json() : resp.text());
 
-    return data;
+      if (ref) res({ data, ref: resp });
+
+      res(data);
+    } catch (err) {
+      rej(err);
+    }
   });
-};
 
 export const get = (target, opts = {}) => req('GET', target, opts);
 

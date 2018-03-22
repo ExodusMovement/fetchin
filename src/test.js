@@ -3,14 +3,13 @@ import { get, post } from './';
 const run = async () => {
   try {
     // make a simple get request, promise-based, returns parsed json by default (can be modified)
-    await get('https://foo', { test: true }); // https://foo
+    await get('https://foo', { test: true });
 
     // passing params, url encoding is handled for you
     await get('https://foo', { params: { bar: 123 }, test: true }); // https://foo?bar=123
 
     // one base, multiple endpoints
     const base = 'https://foo';
-
     await get('/bar', { base, test: true }); // https://foo/bar
     await get('/baz', { base, test: true }); // https://foo/baz
 
@@ -35,6 +34,9 @@ const run = async () => {
       opts: { headers: { 'Content-Type': 'foo/bar' }, body: 'not json' },
       test: true
     });
+
+    // need access to the raw response?
+    await get('https://foo', { ref: true, test: true }); // returns { data, ref }
   } catch (err) {
     console.log(err.message);
   }
