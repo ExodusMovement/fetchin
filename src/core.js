@@ -1,6 +1,4 @@
-const fetch = require('isomorphic-fetch');
-
-const ts = (target, args) =>
+export const ts = (target, args) =>
   target.replace(/\{([a-zA-Z_$][0-9a-zA-Z_$]+)\}/g, (match, arg) => args[arg]);
 
 export const qs = params =>

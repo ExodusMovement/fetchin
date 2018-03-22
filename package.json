@@ -2,7 +2,7 @@
   "name": "fetchin",
   "description": "Fetch helpers.",
   "version": "0.0.10",
-  "main": "lib/core.js",
+  "main": "lib/index.js",
   "react-native": "lib/rn.js",
   "repository": {
     "type": "git",
