@@ -6,14 +6,28 @@ export const qs = params =>
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
     .join('&');
 
-const req = (method, target, { base, args, params, opts, json = true }) => {
+const req = (
+  method,
+  target,
+  { base, args, params, opts, json = true, ref = false }
+) => {
   let url = base || '';
+
   url += ts(target, args);
   url += params ? '?' : '';
   url += params ? qs(params) : '';
+
   const config = { ...opts, method };
+
   // console.log(url, JSON.stringify(config)); // test
-  return fetch(url, config).then(res => (json ? res.json() : res.text()));
+
+  return fetch(url, config).then(res => {
+    const data = json ? res.json() : res.text();
+
+    if (ref) return { data, res };
+
+    return data;
+  });
 };
 
 export const get = (target, opts = {}) => req('GET', target, opts);
