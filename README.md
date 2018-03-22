@@ -39,4 +39,7 @@ await post('https://foo', { body: { bar: 123 } });
 await post('https://foo', {
   opts: { headers: { 'Content-Type': 'foo/bar' }, body: 'not json' }
 });
+
+// need access to the raw response?
+await get('https://foo', { ref: true }); // returns { data, ref }
 ```
