@@ -9,7 +9,7 @@ export const qs = params =>
 const req = (
   method,
   target,
-  { base, args, params, opts, json = true, ref = false }
+  { base, args, params, opts, json = true, ref = false, test = false }
 ) => {
   let url = base || '';
 
@@ -19,7 +19,8 @@ const req = (
 
   const config = { ...opts, method };
 
-  // console.log(url, JSON.stringify(config)); // test
+  // url, fetch config, fetchin config
+  if (test) return console.log(url, config, { json, ref });
 
   return fetch(url, config).then(res => {
     const data = json ? res.json() : res.text();
