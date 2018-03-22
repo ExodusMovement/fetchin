@@ -19,7 +19,7 @@
     "nodemon": "1.17.2"
   },
   "scripts": {
-    "start": "yarn build --watch & nodemon lib/tests.js",
+    "test": "yarn build --watch & nodemon lib/test.js",
     "build":
       "rm -r -f lib && mkdir -p lib && BABEL_ENV=production babel src --out-dir lib"
   },
