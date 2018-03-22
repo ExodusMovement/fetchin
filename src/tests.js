@@ -1,4 +1,4 @@
-import { get, post } from './';
+import { get, post } from './core';
 
 const run = async () => {
   try {
