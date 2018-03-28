@@ -1,5 +1,7 @@
 # fetchin
 
+[![npm version](https://badge.fury.io/js/fetchin.svg)](https://badge.fury.io/js/fetchin)
+
 # Installation
 
 `yarn add isomorphic-fetch fetchin`
