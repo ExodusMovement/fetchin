@@ -77,4 +77,17 @@ describe('mock core', () => {
   });
 });
 
-// TODO: add a non-mock version
+describe('core', () => {
+  beforeAll(() => (process.env.NODE_ENV = 'production'));
+  afterAll(() => (process.env.NODE_ENV = 'test'));
+
+  it('works', async () => {
+    const res = await get('https://api.bitfinex.com/v2/tickers', {
+      params: { symbols: 'tBTCUSD' }
+    });
+
+    const btc = res[0][7];
+
+    expect(btc).toBeGreaterThan(0);
+  });
+});

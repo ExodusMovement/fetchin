@@ -4,6 +4,7 @@
   "parser": "babel-eslint",
   "rules": {
     "comma-dangle": [2, "never"],
+    "no-return-assign": 0,
     "object-curly-newline": 0
   }
 }
