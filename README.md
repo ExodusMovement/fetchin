@@ -1,6 +1,6 @@
 # fetchin
 
-[![npm version](https://badge.fury.io/js/fetchin.svg)](https://badge.fury.io/js/fetchin)
+[![npm version](https://badge.fury.io/js/fetchin.svg)](https://badge.fury.io/js/fetchin) [![Build Status](https://travis-ci.org/sonaye/fetchin.svg?branch=master)](https://travis-ci.org/sonaye/fetchin)
 
 # Installation
 
@@ -37,7 +37,7 @@ await get('https://foo', { opts: { headers: { bar: 'baz' } } });
 // make a simple post request, same api as get with an additional body option
 await post('https://foo', { body: { bar: 123 } });
 
-// Content-Type by default is 'application/json', body is stringified, to overwrite utilize opts
+// Content-Type by default is `application/json`, body is stringified, to overwrite utilize opts
 await post('https://foo', {
   opts: { headers: { 'Content-Type': 'foo/bar' }, body: 'not json' }
 });
