@@ -26,6 +26,7 @@
   },
   "scripts": {
     "lint": "eslint src",
+    "pretest": "NODE_ENV=production babel src/lib --out-dir dist",
     "test": "jest src/test",
     "prebuild": "rm -rf dist && mkdir dist",
     "build": "NODE_ENV=production babel src/lib --out-file dist/index.js"

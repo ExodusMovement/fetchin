@@ -1,4 +1,4 @@
-import { get, post, del, put, head } from '../lib';
+import { get, post, del, put, head } from '../../dist';
 
 describe('mock core', () => {
   it('makes a simple get request', async () => {

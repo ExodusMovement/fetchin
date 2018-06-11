@@ -1,4 +1,4 @@
-import { get } from '../lib';
+import { get } from '../../dist';
 
 describe('core', () => {
   beforeAll(() => (process.env.NODE_ENV = 'production'));
