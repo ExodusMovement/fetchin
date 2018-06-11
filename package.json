@@ -2,7 +2,7 @@
   "license": "MIT",
   "name": "fetchin",
   "description": "Fetch helpers.",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "main": "dist/index.js",
   "react-native": "dist/rn.js",
   "repository": {
@@ -53,5 +53,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "babel-runtime": "6.26.0"
+  }
 }
