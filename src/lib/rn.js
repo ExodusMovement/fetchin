@@ -1,4 +1,6 @@
-export ts from './ts';
-export qs from './qs';
+import ts from './ts';
+import qs from './qs';
 
-export { get, post, del, put, head } from './core';
+import { get, post, del, put, head } from './core';
+
+export { ts, qs, get, post, del, put, head };
