@@ -11,8 +11,7 @@ export default (
       let url = base || '';
 
       url += ts(target, args);
-      url += params ? '?' : '';
-      url += params ? qs(params) : '';
+      url += params ? `?${qs(params)}` : '';
 
       const config = { ...opts, method };
 

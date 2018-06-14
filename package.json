@@ -4,7 +4,6 @@
   "description": "Fetch helpers.",
   "version": "0.0.17",
   "main": "dist/index.js",
-  "react-native": "src/lib/rn.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sonaye/fetchin.git"
@@ -40,8 +39,7 @@
       [
         "transform-runtime",
         {
-          "polyfill": false,
-          "regenerator": true
+          "polyfill": false
         }
       ]
     ]
@@ -53,7 +51,6 @@
     "verbose": true
   },
   "files": [
-    "src/lib",
     "dist"
   ],
   "dependencies": {
