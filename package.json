@@ -2,8 +2,9 @@
   "license": "MIT",
   "name": "fetchin",
   "description": "Fetch helpers.",
-  "version": "0.0.17",
+  "version": "0.0.19",
   "main": "dist/index.js",
+  "react-native": "dist/rn.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sonaye/fetchin.git"
@@ -29,20 +30,6 @@
     "test": "jest src/test",
     "prebuild": "rm -rf dist",
     "build": "NODE_ENV=production babel src/lib --out-dir dist"
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-0"
-    ],
-    "plugins": [
-      [
-        "transform-runtime",
-        {
-          "polyfill": false
-        }
-      ]
-    ]
   },
   "jest": {
     "collectCoverageFrom": [
