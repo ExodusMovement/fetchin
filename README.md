@@ -2,13 +2,13 @@
 
 [![npm version](https://badge.fury.io/js/fetchin.svg)](https://badge.fury.io/js/fetchin) [![Build Status](https://travis-ci.org/sonaye/fetchin.svg?branch=master)](https://travis-ci.org/sonaye/fetchin)
 
-# Install
+## Install
 
 `yarn add fetchin`
 
 Fetchin assumes that `fetch()` is globally available, install [`isomorphic-fetch`](https://github.com/matthew-andrews/isomorphic-fetch) as well (not needed for React Native).
 
-# Usage
+## Usage
 
 ```javascript
 import { get, post } from 'fetchin';
@@ -44,4 +44,18 @@ await post('https://foo', {
 
 // need access to the raw response?
 await get('https://foo', { ref: true }); // returns { data, ref }
+```
+
+## Example
+
+```js
+require('isomorphic-fetch');
+
+const { get } = require('fetchin');
+
+get('https://api.bitfinex.com/v2/tickers', {
+  params: { symbols: 'tBTCUSD' }
+})
+  .then(res => res[0][7])
+  .then(console.log);
 ```
