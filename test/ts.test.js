@@ -1,4 +1,4 @@
-import { ts } from '../../dist';
+import { ts } from '../src';
 
 describe('qs', () => {
   it('works with empty templates', () => expect(ts('', {})).toBe(''));

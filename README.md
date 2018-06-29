@@ -1,10 +1,12 @@
-# fetchin
+# Fetchin
 
 [![npm version](https://badge.fury.io/js/fetchin.svg)](https://badge.fury.io/js/fetchin) [![Build Status](https://travis-ci.org/sonaye/fetchin.svg?branch=master)](https://travis-ci.org/sonaye/fetchin)
 
-# Installation
+# Install
 
-`yarn add isomorphic-fetch fetchin`
+`yarn add fetchin`
+
+Fetchin assumes that `fetch()` is globally available, install [`isomorphic-fetch`](https://github.com/matthew-andrews/isomorphic-fetch) as well (not needed for React Native).
 
 # Usage
 

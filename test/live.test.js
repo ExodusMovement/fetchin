@@ -1,4 +1,6 @@
-import { get } from '../../dist';
+import 'isomorphic-fetch';
+
+import { get } from '../src';
 
 describe('core', () => {
   beforeAll(() => (process.env.NODE_ENV = 'production'));

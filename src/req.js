@@ -5,26 +5,22 @@ export default (
   method,
   target,
   { base, args, params, opts, json = true, ref = false }
-) =>
-  new Promise(async (res, rej) => {
-    try {
-      let url = base || '';
+) => {
+  let url = base || '';
 
-      url += ts(target, args);
-      url += params ? `?${qs(params)}` : '';
+  url += ts(target, args);
+  url += params ? `?${qs(params)}` : '';
 
-      const config = { ...opts, method };
+  const config = { ...opts, method };
 
-      if (process.env.NODE_ENV === 'test') res({ url, config, json, ref });
+  if (process.env.NODE_ENV === 'test') return { url, config, json, ref };
 
-      const resp = await fetch(url, config);
+  let resp;
 
-      const data = await (json ? resp.json() : resp.text());
-
-      if (ref) res({ data, ref: resp });
-
-      res(data);
-    } catch (err) {
-      rej(err);
-    }
-  });
+  return fetch(url, config)
+    .then(res => {
+      resp = res;
+      return json ? res.json() : res.text();
+    })
+    .then(data => (ref ? { data, ref: resp } : data));
+};

@@ -1,3 +1,10 @@
+# 0.0.22
+
+- Drop `babel-runtime` from dependencies.
+- Drop `isomorphic-fetch` from dependencies.
+- Re-implement without async features to avoid the need for `babel-helpers`.
+- Use Rollup to bundle the library.
+
 # 0.0.19
 
 - Support `react-native`.

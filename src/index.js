@@ -1,8 +1,4 @@
-import 'isomorphic-fetch'; // eslint-disable-line import/no-extraneous-dependencies
+export ts from './ts';
+export qs from './qs';
 
-import ts from './ts';
-import qs from './qs';
-
-import { get, post, del, put, head } from './core';
-
-export { ts, qs, get, post, del, put, head };
+export { get, post, del, put, head } from './core';

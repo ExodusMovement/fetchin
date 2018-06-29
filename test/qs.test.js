@@ -1,4 +1,4 @@
-import { qs } from '../../dist';
+import { qs } from '../src';
 
 describe('qs', () => {
   it('works on empty strings', () => expect(qs({})).toBe(''));
