@@ -1,5 +1,6 @@
-# 0.0.22
+# 0.0.23
 
+- Add Typescript definitions.
 - Drop `babel-runtime` from dependencies.
 - Drop `isomorphic-fetch` from dependencies.
 - Re-implement without async features to avoid the need for `babel-helpers`.
@@ -7,9 +8,9 @@
 
 # 0.0.19
 
-- Support `react-native`.
+- Support `react-native` again.
 
 # 0.0.17
 
 - Update build and test process.
-- **Breaking:** Drop support `react-native` for now, support will return in an upcoming version.
+- **Breaking:** Drop support for `react-native` for now, support will return in an upcoming version.

@@ -2,8 +2,9 @@
   "license": "MIT",
   "name": "fetchin",
   "description": "Fetch helpers.",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sonaye/fetchin.git"
@@ -27,7 +28,8 @@
     "coverage": "yarn test --coverage",
     "postcoverage": "open -a Chrome coverage/lcov-report/index.html",
     "prebuild": "rm -rf lib",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "postbuild": "cp src/index.d.ts lib/index.d.ts"
   },
   "jest": {
     "collectCoverageFrom": [
