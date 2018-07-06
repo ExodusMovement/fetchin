@@ -49,13 +49,13 @@ await get('https://foo', { ref: true }); // returns { data, ref }
 ## Example
 
 ```js
-require('isomorphic-fetch');
+import 'isomorphic-fetch';
 
-const { get } = require('fetchin');
+import { get } from 'fetchin';
 
 get('https://api.bitfinex.com/v2/tickers', {
   params: { symbols: 'tBTCUSD' }
 })
-  .then(res => res[0][7])
-  .then(console.log);
+  .then(res => console.log(res[0][7]))
+  .catch(err => console.log(err.message));
 ```
