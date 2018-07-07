@@ -4,9 +4,25 @@
 
 ## Install
 
-`yarn add fetchin`
+```bash
+yarn add fetchin
+`
 
 Fetchin assumes that `fetch()` is globally available, install [`isomorphic-fetch`](https://github.com/matthew-andrews/isomorphic-fetch) as well (not needed for React Native).
+
+## Quick start
+
+```js
+import 'isomorphic-fetch';
+
+import { get } from 'fetchin';
+
+get('https://api.bitfinex.com/v2/tickers', {
+  params: { symbols: 'tBTCUSD' }
+})
+  .then(res => console.log(res[0][7]))
+  .catch(err => console.log(err.message));
+```
 
 ## Usage
 
@@ -44,18 +60,4 @@ await post('https://foo', {
 
 // need access to the raw response?
 await get('https://foo', { ref: true }); // returns { data, ref }
-```
-
-## Example
-
-```js
-import 'isomorphic-fetch';
-
-import { get } from 'fetchin';
-
-get('https://api.bitfinex.com/v2/tickers', {
-  params: { symbols: 'tBTCUSD' }
-})
-  .then(res => console.log(res[0][7]))
-  .catch(err => console.log(err.message));
 ```
