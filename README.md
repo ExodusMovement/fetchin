@@ -6,7 +6,7 @@
 
 ```bash
 yarn add fetchin
-`
+```
 
 Fetchin assumes that `fetch()` is globally available, install [`isomorphic-fetch`](https://github.com/matthew-andrews/isomorphic-fetch) as well (not needed for React Native).
 
